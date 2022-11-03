@@ -1,0 +1,17 @@
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.csproj.AssemblyReference.cache
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.AssemblyInfoInputs.cache
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.AssemblyInfo.cs
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.csproj.CoreCompileInputs.cache
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Data.deps.json
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Data.dll
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\ref\Portfolio.Data.dll
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Data.pdb
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Core.dll
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Core.pdb
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.csproj.CopyComplete
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.dll
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\ref\Portfolio.Data.dll
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.pdb
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\bin\Debug\net6.0\Portfolio.Data.runtimeconfig.json
+C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Data\obj\Debug\net6.0\Portfolio.Data.genruntimeconfig.cache
