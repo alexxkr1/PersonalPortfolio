@@ -18,9 +18,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Portfolio.Models;
+using Volta.Models;
 
-namespace Portfolio.Areas.Identity.Pages.Account
+namespace Volta.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {

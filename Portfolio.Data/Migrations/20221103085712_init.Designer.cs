@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Portfolio.Data;
+using Volta.Data;
 
 #nullable disable
 
-namespace Portfolio.Migrations
+namespace Volta.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
     [Migration("20221103085712_init")]

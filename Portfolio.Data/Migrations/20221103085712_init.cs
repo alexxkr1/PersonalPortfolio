@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Portfolio.Migrations
+namespace Volta.Migrations
 {
     public partial class init : Migration
     {

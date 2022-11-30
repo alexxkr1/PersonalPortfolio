@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Portfolio.Models;
+using Volta.Models;
 
-namespace Portfolio.Data;
+namespace Volta.Data;
 
 public class PortfolioDbContext : IdentityDbContext<PortfolioUser>
 {

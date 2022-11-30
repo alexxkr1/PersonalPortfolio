@@ -1,4 +1,4 @@
-﻿namespace Portfolio.Core
+﻿namespace Volta.Core
 {
     public class Class1
     {

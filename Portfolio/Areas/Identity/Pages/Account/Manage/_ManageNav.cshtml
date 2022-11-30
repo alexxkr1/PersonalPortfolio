@@ -1,4 +1,4 @@
-﻿@using Portfolio.Models
+﻿@using Volta.Models
 @inject SignInManager<PortfolioUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

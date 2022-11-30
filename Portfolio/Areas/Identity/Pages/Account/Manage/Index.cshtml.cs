@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Portfolio.Models;
+using Volta.Models;
 
-namespace Portfolio.Areas.Identity.Pages.Account.Manage
+namespace Volta.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {

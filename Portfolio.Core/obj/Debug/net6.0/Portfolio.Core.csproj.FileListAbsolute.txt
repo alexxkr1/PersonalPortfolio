@@ -12,3 +12,17 @@ C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.pdb
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Core\bin\Debug\net6.0\Portfolio.Core.runtimeconfig.json
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.genruntimeconfig.cache
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\bin\Debug\net6.0\Portfolio.Core.deps.json
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\bin\Debug\net6.0\Portfolio.Core.runtimeconfig.json
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\bin\Debug\net6.0\Portfolio.Core.dll
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\bin\Debug\net6.0\Portfolio.Core.pdb
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.csproj.AssemblyReference.cache
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.AssemblyInfoInputs.cache
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.AssemblyInfo.cs
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.csproj.CoreCompileInputs.cache
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.dll
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\refint\Portfolio.Core.dll
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.pdb
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\Portfolio.Core.genruntimeconfig.cache
+C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio.Core\obj\Debug\net6.0\ref\Portfolio.Core.dll

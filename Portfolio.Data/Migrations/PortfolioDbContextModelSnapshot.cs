@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Portfolio.Data;
+using Volta.Data;
 
 #nullable disable
 
-namespace Portfolio.Migrations
+namespace Volta.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
     partial class PortfolioDbContextModelSnapshot : ModelSnapshot

@@ -1,4 +1,4 @@
-namespace Portfolio.Models
+namespace Volta.Models
 {
     public class ErrorViewModel
     {
