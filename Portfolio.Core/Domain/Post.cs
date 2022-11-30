@@ -11,6 +11,7 @@ namespace Portfolio.Core.Domain
         public int Id { get; set; }
         public string Title { get; set; } = "";
         public string body { get; set; } = "";
+        public string Image { get; set; } = "";
         public DateTime created { get; set; } = DateTime.Now;
     }
 }

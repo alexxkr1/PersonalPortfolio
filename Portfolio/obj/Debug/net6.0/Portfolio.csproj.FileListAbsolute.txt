@@ -289,7 +289,6 @@ C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Portf
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Portfolio.deps.json
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Portfolio.runtimeconfig.json
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Portfolio.dll
-C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\ref\Portfolio.dll
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Portfolio.pdb
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\Humanizer.dll
 C:\Users\opilane\source\repos\PersonalPortfolio\Portfolio\bin\Debug\net6.0\MessagePack.dll
@@ -840,3 +839,4 @@ C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio\obj\Debug\net6.0\refint\
 C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio\obj\Debug\net6.0\Portfolio.pdb
 C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio\obj\Debug\net6.0\Portfolio.genruntimeconfig.cache
 C:\Users\weers\Source\Repos\PersonalPortfolio\Portfolio\obj\Debug\net6.0\ref\Portfolio.dll
+C:\Users\opilane\Source\repos\PersonalPortfolio\Portfolio\obj\Debug\net6.0\refint\Portfolio.dll

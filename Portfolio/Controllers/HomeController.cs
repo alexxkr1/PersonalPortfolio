@@ -4,16 +4,19 @@ using System.Diagnostics;
 using Volta.Data;
 using Portfolio.Core.Domain;
 using Portfolio.Data.Repository;
+using Portfolio.Data.FileManager;
 
 namespace Volta.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IRepository _repo;
+        private readonly IFilemanager _filemanager;
 
-        public HomeController(IRepository repo)
+        public HomeController(IRepository repo, IFilemanager filemanager)
         {
             _repo = repo;
+            _filemanager = filemanager;
         }
 
         public IActionResult Index()
@@ -31,18 +34,32 @@ namespace Volta.Controllers
         public IActionResult Edit(int? id)
         {
             if (id == null)
-                return View(new Post());
+                return View(new PostViewModel());
             else
             {
                 var post = _repo.GetPost((int) id);
-                return View(post);
+                return View(new PostViewModel
+                {
+                    Id = post.Id,
+                    Title = post.Title,
+                    body = post.body
+                });
             }
                
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Post post)
+        public async Task<IActionResult> Edit(PostViewModel vm)
         {
+
+
+            var post = new Post
+            {
+                Id = vm.Id,
+                Title = vm.Title,
+                body = vm.body,
+                Image = await _filemanager.SaveImage(vm.Image)
+            };
 
             if (post.Id > 0)
                 _repo.UpdatePost(post);
