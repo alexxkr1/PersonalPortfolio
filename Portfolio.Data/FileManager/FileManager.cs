@@ -17,6 +17,11 @@ namespace Portfolio.Data.FileManager
             _imagepath = config["Path:Images"];
         }
 
+        public FileStream ImageStream(string image)
+        {
+            return new FileStream(Path.Combine(_imagepath, image), FileMode.Open, FileAccess.Read);
+        }
+
         public async Task<string> SaveImage(IFormFile image)
         {
             var save_path = Path.Combine(_imagepath);

@@ -9,6 +9,7 @@ namespace Portfolio.Data.FileManager
 {
     public interface IFilemanager
     {
+        FileStream ImageStream(string image);
         Task<string> SaveImage(IFormFile image);
     }
 }
