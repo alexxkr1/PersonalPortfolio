@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Portfolio.Core.Domain;
+using Portfolio.Core.Domain.Comments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,8 @@ namespace Volta.Data
         }
 
         public DbSet<Post> posts { get; set; }
+        public DbSet<MainComment> MainComments { get; set; }
+        public DbSet<SubComment> SubComments { get; set; }
+
     }
 }

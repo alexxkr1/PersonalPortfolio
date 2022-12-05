@@ -22,6 +22,56 @@ namespace Portfolio.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Portfolio.Core.Domain.Comments.MainComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("MainComments");
+                });
+
+            modelBuilder.Entity("Portfolio.Core.Domain.Comments.SubComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MainCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MainCommentId");
+
+                    b.ToTable("SubComments");
+                });
+
             modelBuilder.Entity("Portfolio.Core.Domain.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -60,6 +110,32 @@ namespace Portfolio.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("posts");
+                });
+
+            modelBuilder.Entity("Portfolio.Core.Domain.Comments.MainComment", b =>
+                {
+                    b.HasOne("Portfolio.Core.Domain.Post", null)
+                        .WithMany("MainComments")
+                        .HasForeignKey("PostId");
+                });
+
+            modelBuilder.Entity("Portfolio.Core.Domain.Comments.SubComment", b =>
+                {
+                    b.HasOne("Portfolio.Core.Domain.Comments.MainComment", null)
+                        .WithMany("SubComments")
+                        .HasForeignKey("MainCommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Portfolio.Core.Domain.Comments.MainComment", b =>
+                {
+                    b.Navigation("SubComments");
+                });
+
+            modelBuilder.Entity("Portfolio.Core.Domain.Post", b =>
+                {
+                    b.Navigation("MainComments");
                 });
 #pragma warning restore 612, 618
         }

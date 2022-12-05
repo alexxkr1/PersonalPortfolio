@@ -9,21 +9,122 @@
 
  <h2>Home</h2>
 
- <img src="~/content/static/pexels-huy-phan-1383775.jpg" width="500px"/>
+<a asp-controller="Home" asp-action="Index" asp-route-category="Esindus">Esindus</a>
+<a asp-controller="Home" asp-action="Index" asp-route-category="Noored">Noored</a>
+<a asp-controller="Home" asp-action="Index" asp-route-category="Fännid">Fännid</a>
 
- <div>
-     @foreach(var post in Model)
-     {
-         <li>
-             <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
-                 @post.Title
-             </a> -
-            <a asp-controller="Home" asp-action="Edit" asp-route-id="@post.Id">
-               Edit
-            </a> -
-            <a asp-controller="Home" asp-action="Remove" asp-route-id="@post.Id">
-                Remove
-            </a>
-         </li>
-     }
- </div>
+
+
+<div class="container">
+
+
+    
+        <div class="container">
+            <div class="row">
+    @foreach (var post in Model)
+    {
+        <div class="col-lg-4 col-md-12">
+            <div class="card">
+                            @if (!String.IsNullOrEmpty(post.Image))
+                            {
+                                var image_path = $"/Image/{post.Image}";
+                                <img width="100" class="card-img-top" src="@image_path" />
+                            }
+           
+                <div class="card-body">
+                    <h5 class="card-title">@post.Title</h5>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk
+                        of the card's content.
+                    </p>
+                    <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id" class="btn btn-primary">Lugema</a>
+                </div>
+            </div>
+        </div>
+
+    }
+            </div>
+        </div>
+   
+
+    @*Section end*@
+
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <partial name="_LastGame" />
+        </div>
+        <div class="col-sm-6">4</div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            
+                <div class="col-lg-4 col-md-12">
+                    <div class="card">
+                      
+                            <img width="100" class="card-img-top" src="~/content/static/IMG_0848-1536x1024.jpg" />
+                        
+
+                        <div class="card-body">
+                        <h5 class="card-title">Tule Voltasse trenni!</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk
+                                of the card's content.
+                            </p>
+                            <a asp-controller="Home" asp-action="Post" asp-route-id="" class="btn btn-primary">Lugema</a>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+
+                    <img width="100" class="card-img-top" src="~/content/static/file.jpg" />
+
+
+                    <div class="card-body">
+                        <h5 class="card-title">Toeta Volta kasutades LHV jalgpallikaarti!</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's content.
+                        </p>
+                        <a asp-controller="Home" asp-action="Post" asp-route-id="" class="btn btn-primary">Lugema</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+
+                    <img width="100" class="card-img-top" src="~/content/static/logo.png" />
+
+
+                    <div class="card-body">
+                        <h5 class="card-title">Volta blogi!</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's content.
+                        </p>
+                        <a asp-controller="Home" asp-action="Post" asp-route-id="" class="btn btn-primary">Lugema</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@*    <div class="col-lg-4 col-md-12">
+        1
+    </div>
+    <div class="col-lg-4 col-md-12">
+        12
+    </div>
+    <div class="col-lg-4 col-md-12">
+        3
+    </div>*@
+
+
+</div>
+

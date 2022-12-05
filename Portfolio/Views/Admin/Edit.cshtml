@@ -2,7 +2,7 @@
 <link href="~/lib/trumbowyg-main/dist/ui/trumbowyg.min.css" rel="stylesheet" />
 @*<a href="~/lib/trumbowyg-main/dist/ui/trumbowyg.min.css.map">~/lib/trumbowyg-main/dist/ui/trumbowyg.min.css.map</a>*@
 <div>
-    <form asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <form asp-controller="Admin" asp-action="Edit" method="post" enctype="multipart/form-data">
         <input asp-for="Id" type="hidden" />
         <div>
             <label>Title</label>
@@ -18,9 +18,11 @@
         </div>
         <div>
             <label>Category</label>
-            <input asp-for="Category" />
+         
             <select asp-for="Category">
-                <option></option>
+                <option value="Esindus">Esindus</option>
+                <option value="Noored">Noored</option>
+                <option value="Fännid">Fännid</option>
             </select>
         </div>
         <div>

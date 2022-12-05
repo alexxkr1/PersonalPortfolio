@@ -1,7 +1,11 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.Extensions.Hosting;
 using Portfolio.Core.Domain;
+using Portfolio.Core.Domain.Comments;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +28,29 @@ namespace Portfolio.Data.Repository
 
         public List<Post> GetAllPosts()
         {
-           return _context.posts.ToList();
+
+            return _context.posts.ToList();
         }
 
+
+        public List<Post> GetAllPosts(string category)
+        {
+            Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
+
+            //return _context.posts
+            //    .Where(post => InCategory(post))
+            //    .ToList();
+            return _context.posts.Where(post => post.Category == category).ToList();
+            //return _context.posts.ToList();
+        }
+
+       
         public Post GetPost(int id)
         {
-            return _context.posts.FirstOrDefault(p => p.Id == id);
+            return _context.posts
+                .Include(p => p.MainComments)
+                .Include(p => p.MainComments)
+                .FirstOrDefault(p => p.Id == id);
         }
 
         public void RemovePost(int id)
@@ -52,5 +73,9 @@ namespace Portfolio.Data.Repository
             return false;
         }
 
+        public void AddSubComment(SubComment comment)
+        {
+            _context.SubComments.Add(comment);
+        }
     }
 }

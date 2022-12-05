@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32901.215
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio", "Portfolio\Portfolio.csproj", "{2FAD7881-4B25-4414-A142-FD47F4919F5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Data", "Portfolio.Data\Portfolio.Data.csproj", "{CEA0FB27-E456-40CC-B08B-E9C1515281B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Data", "Portfolio.Data\Portfolio.Data.csproj", "{CEA0FB27-E456-40CC-B08B-E9C1515281B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Core", "Portfolio.Core\Portfolio.Core.csproj", "{AFDD5D6F-AD11-4DE8-A2DA-D936CA5E7148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Core", "Portfolio.Core\Portfolio.Core.csproj", "{AFDD5D6F-AD11-4DE8-A2DA-D936CA5E7148}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D720F3C-B244-408E-B4C7-D52347A5C67B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

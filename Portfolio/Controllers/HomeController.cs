@@ -5,6 +5,9 @@ using Volta.Data;
 using Portfolio.Core.Domain;
 using Portfolio.Data.Repository;
 using Portfolio.Data.FileManager;
+using Portfolio.Core.Domain.Comments;
+using System.Net;
+using HtmlAgilityPack;
 
 namespace Volta.Controllers
 {
@@ -17,12 +20,119 @@ namespace Volta.Controllers
         {
             _repo = repo;
             _filemanager = filemanager;
+            
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string category)
         {
-          var posts = _repo.GetAllPosts();
+            var posts = string.IsNullOrEmpty(category) ? _repo.GetAllPosts() : _repo.GetAllPosts(category);
             return View(posts);
+        }
+
+        public IActionResult LeagueTable()
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            List<Klubid> klubid = new List<Klubid>();
+
+            var web = new HtmlWeb();
+            var doc = web.Load("https://jalgpall.ee/voistlused/madalamad-liigad/5/III.E");
+            var doc2 = web.Load("https://jalgpall.ee/voistlused/5/team/4223?season=2022");
+
+            foreach (var item in doc.DocumentNode.SelectNodes("//*[@id=\"page\"]/div/div[1]/div[1]/div[1]/table/tbody/tr"))
+            {
+
+                string kohtliigas = item.SelectSingleNode(".//td[1]").InnerText.Trim();
+                string img = item.SelectSingleNode($".//td[2]/img").GetAttributeValue("src", null).Trim();
+                string title = item.SelectSingleNode(".//td[3]").InnerText.Trim();
+                string mänge = item.SelectSingleNode(".//td[4]").InnerText.Trim();
+                string võite = item.SelectSingleNode(".//td[5]").InnerText.Trim();
+                string viike = item.SelectSingleNode(".//td[6]").InnerText.Trim();
+                string kaotusi = item.SelectSingleNode(".//td[7]").InnerText.Trim();
+                string väravaid = item.SelectSingleNode(".//td[8]").InnerText.Trim();
+                string punkte = item.SelectSingleNode(".//td[9]").InnerText.Trim();
+
+                klubid.Add(new Klubid()
+                {
+                    title = title,
+                    kohtliigas = kohtliigas,
+                    logo = img,
+                    võite = võite,
+                    viike = viike,
+                    kaotusi = kaotusi,
+                    väravaid = väravaid,
+                    punkte = punkte,
+                    mänge = mänge
+
+                });
+
+
+            }
+
+
+
+            foreach (var item in doc2.DocumentNode.SelectNodes("//*[@id=\"page\"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr").Take(4))
+            {
+
+                string date = item.SelectSingleNode(".//td[1]").InnerText.Trim();
+                string teamleft = item.SelectSingleNode($".//td[2]/div/img").GetAttributeValue("src", null).Trim();
+                string teamright = item.SelectSingleNode($".//td[4]/div/img").GetAttributeValue("src", null).Trim();
+                string score = item.SelectSingleNode(".//td[3]").InnerText.Trim();
+                string score6 = item.SelectSingleNode(".//td").InnerText.Trim();
+                klubid.Add(new Klubid()
+                {
+                    date = date,
+                    teamleft = teamleft,
+                    teamright = teamright,
+                    score = score
+
+
+                });
+
+
+            }
+
+            return View(klubid);
+        }
+
+
+        public IActionResult LastGames()
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            List<Klubid> klubid = new List<Klubid>();
+
+            var web = new HtmlWeb();
+            var doc2 = web.Load("https://jalgpall.ee/voistlused/5/team/4223?season=2022");
+
+
+            foreach (var item in doc2.DocumentNode.SelectNodes("//*[@id=\"page\"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr").Take(20))
+            {
+
+                string date = item.SelectSingleNode(".//td[1]").InnerText.Trim();
+                string teamleft = item.SelectSingleNode($".//td[2]/div/img").GetAttributeValue("src", null).Trim();
+                string teamright = item.SelectSingleNode($".//td[4]/div/img").GetAttributeValue("src", null).Trim();
+                string score = item.SelectSingleNode(".//td[3]").InnerText.Trim();
+                string score6 = item.SelectSingleNode(".//td").InnerText.Trim();
+
+                //*[@id="page"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr[44]/td
+                //*[@id="page"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr[3]/td[4]/div/img
+                //*[@id="page"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr[1]/td[4]/div/img
+                //*[@id="page"]/div[2]/div[1]/div/div[2]/ul/li[1]/table/tbody/tr[1]/td[3]/a
+                klubid.Add(new Klubid()
+                {
+                    date = date,
+                    teamleft = teamleft,
+                    teamright = teamright,
+                    score = score
+
+
+                });
+
+
+            }
+
+            return View(klubid);
         }
         public IActionResult Post(int id)
         {
@@ -30,75 +140,6 @@ namespace Volta.Controllers
             return View(post);
         }
 
-        [HttpGet]
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-                return View(new PostViewModel());
-            else
-            {
-                var post = _repo.GetPost((int) id);
-                return View(new PostViewModel
-                {
-                    Id = post.Id,
-                    Title = post.Title,
-                    body = post.body,
-                    CurrentImage = post.Image,
-                    Description = post.Description,
-                    Category = post.Category,
-                    Tags = post.Tags
-                }); ;
-            }
-               
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(PostViewModel vm)
-        {
-
-
-            var post = new Post
-            {
-                Id = vm.Id,
-                Title = vm.Title,
-                body = vm.body,
-                Description = vm.Description,
-                Category = vm.Category,
-                Tags = vm.Tags,
-               
-            };
-
-            if (vm.Image == null)
-               post.Image = vm.CurrentImage;
-            else
-                post.Image = await _filemanager.SaveImage(vm.Image);
-
-            if (post.Id > 0)
-                _repo.UpdatePost(post);
-            else
-                _repo.AddPost(post);
-
-          
-
-            if (await _repo.SaveChangesAsync())    
-                return RedirectToAction("Index");          
-            else
-                return View(post);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Remove(int id)
-        {
-         _repo.RemovePost(id);
-        await _repo.SaveChangesAsync();
-            return RedirectToAction("Index");
-
-        }
-        [HttpGet("/Image/{image}")]
-        public IActionResult Image(string image)
-        {
-            var mime = image.Substring(image.LastIndexOf('.') + 1);
-            return new FileStreamResult(_filemanager.ImageStream(image), $"image/{mime}");
-        }
+       
     }
 }

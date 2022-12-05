@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Portfolio.Core.Domain.Comments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,8 @@ namespace Portfolio.Core.Domain
         public string Category { get; set; } = "";
 
         public DateTime created { get; set; } = DateTime.Now;
+
+        public List<MainComment> MainComments { get; set; }
+        public IEnumerable<Klubid>? Citizens { get; set; }
     }
 }
