@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 namespace Portfolio.Controllers
 {
 
-    [Authorize]
+   
     public class AdminController : Controller
 
     {

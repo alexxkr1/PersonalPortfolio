@@ -21,6 +21,6 @@ namespace Portfolio.Core.Domain
         public DateTime created { get; set; } = DateTime.Now;
 
         public List<MainComment> MainComments { get; set; }
-        public IEnumerable<Klubid>? Citizens { get; set; }
+        //public IEnumerable<Klubid>? Klubid { get; set; }
     }
 }

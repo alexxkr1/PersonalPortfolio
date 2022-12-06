@@ -9,9 +9,9 @@
 
  <h2>Home</h2>
 
-<a asp-controller="Home" asp-action="Index" asp-route-category="Esindus">Esindus</a>
-<a asp-controller="Home" asp-action="Index" asp-route-category="Noored">Noored</a>
-<a asp-controller="Home" asp-action="Index" asp-route-category="Fännid">Fännid</a>
+<a asp-controller="Home" asp-action="Blog" asp-route-category="Esindus">Esindus</a>
+<a asp-controller="Home" asp-action="Blog" asp-route-category="Noored">Noored</a>
+<a asp-controller="Home" asp-action="Blog" asp-route-category="Fännid">Fännid</a>
 
 
 
@@ -53,9 +53,12 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <partial name="_LastGame" />
+            <a asp-controller="Home" asp-action="LastGames" class="btn btn-primary">Lugema</a>
+            @*<partial name="_LastGame" />*@
         </div>
-        <div class="col-sm-6">4</div>
+        <div class="col-sm-6">
+            <a asp-controller="Home" asp-action="LeagueTable" class="btn btn-primary">Lugema</a>
+        </div>
     </div>
 
 

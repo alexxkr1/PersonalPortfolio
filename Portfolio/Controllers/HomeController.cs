@@ -39,7 +39,7 @@ namespace Volta.Controllers
             var doc = web.Load("https://jalgpall.ee/voistlused/madalamad-liigad/5/III.E");
             var doc2 = web.Load("https://jalgpall.ee/voistlused/5/team/4223?season=2022");
 
-            foreach (var item in doc.DocumentNode.SelectNodes("//*[@id=\"page\"]/div/div[1]/div[1]/div[1]/table/tbody/tr"))
+            foreach (var item in doc.DocumentNode.SelectNodes("//*[@id=\"page\"]/div/div[1]/div[1]/div[1]/table/tbody/tr").Take(11))
             {
 
                 string kohtliigas = item.SelectSingleNode(".//td[1]").InnerText.Trim();
@@ -139,7 +139,17 @@ namespace Volta.Controllers
             var post = _repo.GetPost(id);
             return View(post);
         }
+        public IActionResult Contact()
+        {
+         
+            return View();
+        }
 
-       
+        public IActionResult Blog(string category)
+        {
+
+            var posts = string.IsNullOrEmpty(category) ? _repo.GetAllPosts() : _repo.GetAllPosts(category);
+            return View(posts);
+        }
     }
 }
