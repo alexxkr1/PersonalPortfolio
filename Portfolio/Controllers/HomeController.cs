@@ -144,7 +144,16 @@ namespace Volta.Controllers
          
             return View();
         }
+        public IActionResult TuleTrenni()
+        {
 
+            return View();
+        }
+        public IActionResult About()
+        {
+
+            return View();
+        }
         public IActionResult Blog(string category)
         {
 

@@ -63,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX01haW5Db21tZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/Blog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -93,6 +97,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/Sponsorid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTcG9uc29yaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/TreeningVorm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmVlbmluZ1Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/TuleTrenni.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUdWxlVHJlbm5pLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/opilane/Source/repos/PersonalPortfolio/Portfolio/Views/Home/_LastGame.cshtml]
